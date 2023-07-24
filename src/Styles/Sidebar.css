@@ -1,0 +1,51 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex: 0.35; /* it is for the flex distance or gap or width of the container which is 35% of the container*/
+}
+.sidebar_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    min-width: 10vw;
+    background-color: #e5e4e4;
+}
+.sidebar_headerRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 10vw;
+}
+.sidebar_header .MuiSvgIcon-root{
+    margin-right: 0.5vw;
+    font-size: 26px !important;
+}
+.sidebar_search{
+    display: flex;
+    align-items: center;
+    background-color: #f7f6f6;
+    height: 39px;
+    padding: 10px;
+}
+.sidebar_searchContainer{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+.sidebar_searchContainer input {
+    border: none;
+    margin-left: 10px;
+    width: 100%;
+    outline: none;
+}
+.sidebar_chats{
+    background-color: white;
+    flex: 1;
+    overflow: scroll;
+}
+.sidebar_chats::-webkit-scrollbar {
+    display: none;
+  }
