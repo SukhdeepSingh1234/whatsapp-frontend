@@ -2,7 +2,6 @@
 import express from "express";
 import mongoose from "mongoose";
 import Messages from "./dbMessages.js"
-import axios from "./axios.js";
 import Pusher from "pusher";
 import cors from 'cors'
 
@@ -22,11 +21,11 @@ const pusher = new Pusher({
 app.use(express.json())
 app.use(cors())
 
-app.use((req,res,next)=>{
-    res.setHeader("Access-Control-Allow-Origin","*")
-    res.setHeader("Access-Control-Allow-Headers","*")
-    next()
-})
+// app.use((req,res,next)=>{
+//     res.setHeader("Access-Control-Allow-Origin","*")
+//     res.setHeader("Access-Control-Allow-Headers","*")
+//     next()
+// })
 
 // dbconfig
 const connection_url= 'mongodb+srv://admin:EzY7OT9bfJxyGYYh@cluster0.6mv9wz7.mongodb.net/whatsappDb?retryWrites=true&w=majority'

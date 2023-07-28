@@ -38,7 +38,7 @@ function App() {
 
   useEffect(()=>{
     setName(prompt("enter your name")) 
-  },[0])
+  },[])
 
   console.log(messages)
 
