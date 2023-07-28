@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import Messages from "./dbMessages.js"
 import axios from "./axios.js";
 import Pusher from "pusher";
+import cors from 'cors'
 
 //config
 const app=express();
@@ -19,6 +20,7 @@ const pusher = new Pusher({
 // middlewares
 
 app.use(express.json())
+app.use(cors())
 
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin","*")
@@ -42,10 +44,12 @@ db.once('open',()=>{
         console.log(change)
         if(change.operationType==='insert'){ // operationType is a status json that tells if inserted or not if yes
             const messageDetails=change.fullDocument;// then get the full document from the json that contains data of message and name,..etc parameter we gave in the body
-            pusher.trigger('messages','inserted', // messages will be the server that checks for change inserted and trigger the pusher
+            pusher.trigger('messages','inserted', // messages will be the channel that checks for change inserted and trigger the pusher
             {
                 name:messageDetails.name,
-                message:messageDetails.message
+                message:messageDetails.message,
+                timestamp:messageDetails.timestamp,
+                received:messageDetails.received
             })
         }else{
             console.log("Error triggering Pusher")
