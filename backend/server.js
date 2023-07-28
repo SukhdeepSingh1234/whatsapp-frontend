@@ -31,7 +31,6 @@ app.use(cors())
 const connection_url= 'mongodb+srv://admin:EzY7OT9bfJxyGYYh@cluster0.6mv9wz7.mongodb.net/whatsappDb?retryWrites=true&w=majority'
 mongoose.connect(connection_url)
 
-console.log("db configured")
 // configuring Pusher to get real time database feature
 const db=mongoose.connection;
 db.once('open',()=>{
