@@ -1,0 +1,63 @@
+.setProf{
+    display: flex;
+    background-image: url("https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg");
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+.setProf_box{
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    background-color: lightgray;
+    border-radius: 10px;
+    width: 30vw;
+
+}
+.setProf_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.setProf_data h2{
+    margin-bottom: 4vh;
+    font-size: xx-large;
+}
+.setProf_imageupload{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 3vh;
+}
+.setProf_uploadInp{
+    width: 10vw;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    text-decoration: solid;
+    margin-left: 5px;
+}
+.setProf_position{
+    margin-left: 8vw;
+    margin-bottom: 2vh;
+}
+.setProf_caption{
+    margin-left: 2vw;
+    width: 17vw;
+    outline: none;
+    margin-bottom: 17px;
+    margin-top: 1vh;
+    border: none;
+    border-bottom: 1px solid green;
+}

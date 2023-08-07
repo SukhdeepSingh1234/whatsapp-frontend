@@ -1,0 +1,78 @@
+.otpverify{
+    display: flex;
+    object-fit: contain;
+    background-image: url("https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg");
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+.otpverify_box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 43vh;
+    width: 26vw;
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+.otpverify_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.otpverify_data h2{
+    margin-bottom: 5vh;
+    color: black;
+    font-size: xx-large;
+}
+.otpverify_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.otpverify_form_email {
+    width: 15vw;
+    outline: none;
+    margin-bottom: 17px;
+    border: none;
+    border-bottom: 1px solid green;
+}
+.otpverify_form_otp {
+    width: 8.9vw;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid green;
+}
+.otpverify_send{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.otpverify_buttonOtp{
+    width: 60%;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    text-decoration: solid;
+    margin-left: 5px;
+
+}
+.otpverify_button{
+    width: 60%;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    text-decoration: solid;
+    margin-top: 10px;
+}

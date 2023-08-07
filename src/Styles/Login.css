@@ -1,0 +1,54 @@
+.login{
+    object-fit: contain;
+    background-image: url("https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg");
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_box{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    height: 43vh;
+    background-color: lightgrey;
+    width: 26vw;
+    /* border: 2px solid black; */
+}
+.login_img{
+    object-fit: contain;
+    height: 100px;
+    width: 300px;
+}
+.login_data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login_form input {
+    width: 15vw;
+    outline: none;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid green;
+}
+.login_button{
+    width: 45%;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    text-decoration: solid;
+    margin-top: 10px;
+}
