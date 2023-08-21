@@ -1,6 +1,7 @@
 .sidebarChat{
     display: flex;
     flex-direction: row;
+    flex: 0.65;
     padding: 15px;
     cursor: pointer;
     border-bottom: 1px solid lightgray;

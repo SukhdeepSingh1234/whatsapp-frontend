@@ -41,7 +41,6 @@ function Login() {
           });
           setTimeout(() => {
             navigate("/OtpVerify")
-            // setLoading(false)
           }, 3000);
           
       }else{

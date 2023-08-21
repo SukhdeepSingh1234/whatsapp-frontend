@@ -7,11 +7,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import { IconButton,Avatar } from '@mui/material';
 import { SearchOutlined } from '@mui/icons-material';
 import SidebarChat from './SidebarChat';
-function Sidebar() {
+function Sidebar({userImg}) {
   return (
     <div className='sidebar'>
       <div className='sidebar_header'>
-        <Avatar src='https://wallpapercave.com/wp/wp5388908.jpg'/>
+        <Avatar src={userImg}/>
         <div className='sidebar_headerRight'>
             <IconButton>
              <DonutLargeIcon/>

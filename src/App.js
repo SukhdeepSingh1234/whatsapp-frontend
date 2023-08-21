@@ -1,8 +1,6 @@
 
-import { useEffect, useState } from 'react';
 import './App.css';
-import {db} from './firebase'
-import axios from './axios'
+import { useEffect, useState,} from 'react';
 import Login from './components/Login'
 import { Route, Routes } from 'react-router-dom';
 import OtpVerify from './components/OtpVerify';
@@ -10,9 +8,16 @@ import { BrowserRouter} from 'react-router-dom';
 import Application from './components/Application';
 import SetProfile from './components/SetProfile';
 import Home from './components/Home'
+import { useNavigate } from "react-router-dom";
+
 function App() {
 
 
+
+
+  
+
+  
 
   return (
     <div className="app">
