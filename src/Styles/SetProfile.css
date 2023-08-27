@@ -21,6 +21,41 @@
     width: 30vw;
 
 }
+@media (max-width: 885px) {
+    .setProf_box {
+        width: 50%; /* Adjust as needed */
+        height: 45%;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      .setProf_box h2{
+        font-size: large;
+      }
+      .setProf_uploadInp{
+        margin-left: 10px;
+      }
+      .setProf_caption{
+        min-width: 30vw;
+      }
+      .setProf_uploadInp{
+          width: 25%;
+      }
+}
+@media (max-width: 533px) {
+    .setProf_box {
+        width: 50%; /* Adjust as needed */
+        height: 45%;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      .setProf_box h2{
+        font-size: large;
+      }
+      
+      .setProf_uploadInp{
+          width: 25%;
+      }
+}
 .setProf_data{
     display: flex;
     justify-content: center;
@@ -39,6 +74,7 @@
     padding: 10px;
     margin-top: 3vh;
 }
+
 .setProf_uploadInp{
     width: 10vw;
     background-color: green;

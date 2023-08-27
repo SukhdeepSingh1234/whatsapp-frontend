@@ -88,8 +88,9 @@ function Login() {
     <div className='login' >
       <div className='login_box'>
         <ToastContainer/>
-        <img className='login_img' src='https://logos-world.net/wp-content/uploads/2020/05/WhatsApp-Emblem.png'/>
-        <div className='login_data' >
+       
+          <img className='login_img' src='https://logos-world.net/wp-content/uploads/2020/05/WhatsApp-Emblem.png'/>
+          <div className='login_adjuster' >
           <form className='login_form'>
                 <input type='text' name="name" placeholder='Name' onChange={(e)=>setName(e.target.value)} value={name} />
                 <input type='email'name="email" placeholder='Email' onChange={(e)=>setEmail(e.target.value)} value={email}/>
@@ -98,6 +99,8 @@ function Login() {
                 <button type='submit' className='login_button' onClick={handleLogin}  >Log In</button>
           </form>
         </div>
+        
+
       </div>
     </div>
   )

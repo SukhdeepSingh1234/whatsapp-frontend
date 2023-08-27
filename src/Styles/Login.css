@@ -18,12 +18,41 @@
     width: 26vw;
     /* border: 2px solid black; */
 }
+@media (max-width: 885px) {
+    .login_box {
+      width: 50%; /* Adjust as needed */
+      height: 45%;
+      max-width: 300px; /* Adjust as needed */
+      margin: 0 auto; /* Center the container horizontally */
+    }
+    .login_data{
+        width: 90%;
+
+    }
+    .login_form{
+        width:50vw
+    }
+    .login_form input {
+        min-width: 25vw;
+    }
+    .login_button{
+        width: 25%;
+    }
+}
 .login_img{
     object-fit: contain;
     height: 100px;
     width: 300px;
 }
 .login_data{
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login_adjuster{
+    object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;

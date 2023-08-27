@@ -18,6 +18,50 @@
     border-radius: 10px;
     background-color: lightgrey;
 }
+@media (max-width: 885px) {
+    .otpverify_box {
+        width: 50%; /* Adjust as needed */
+        height: 45%;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      .otpverify_data h2{
+        font-size: x-large;
+      }
+      .otpverify_form_email{
+        min-width: 20vw ;
+      }
+      .otpverify_form_otp {
+          /* min-width: 20vw; */
+      }
+      .otpverify_button{
+          width: 25%;
+      }
+}
+@media (max-width: 691px) {
+    .otpverify_box {
+        width: 50%; /* Adjust as needed */
+        height: 45%;
+        max-width: 300px; /* Adjust as needed */
+        margin: 0 auto; /* Center the container horizontally */
+      }
+      .otpverify_data{
+        text-align: center;
+      }
+      .otpverify_data h2{
+        font-size: small;
+      }
+      .otpverify_form_email{
+        min-width: 31vw ;
+      }
+      .otpverify_form_otp {
+          min-width: 15vw;
+      }
+      .otpverify_button{
+          width: 25%;
+      }
+
+}
 .otpverify_data{
     display: flex;
     justify-content: center;

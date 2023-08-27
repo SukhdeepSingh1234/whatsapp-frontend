@@ -116,7 +116,7 @@ function OtpVerify() {
       <div className='otpverify_box' >
         <ToastContainer/>
         <div className='otpverify_data' >
-            <h2>Verify Yourself</h2>
+            <h2 className='otpverify_heading' >Verify Yourself</h2>
             <form className='otpverify_form'>
                   <input className='otpverify_form_email' type='email'name="email" placeholder='Email( Entered Previously)' onChange={(e)=>setEmail(e.target.value)} value={email}/>
                   <div className='otpverify_send' >
