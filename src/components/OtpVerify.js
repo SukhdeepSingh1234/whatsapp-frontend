@@ -35,7 +35,7 @@ function OtpVerify() {
     setResendOtp(true)
     setSeconds(initialSeconds);
     setCounting(true);
-    const response = await axios.post('/sendotp',{
+    const response = await axios.post('/api/otp/sendOtp',{
       email:email
     })
     if(response.data.success){
@@ -68,7 +68,7 @@ function OtpVerify() {
   }
   const Verify= async(e)=>{
     e.preventDefault()
-    const response= await axios.post('/verify',{
+    const response= await axios.post('/api/otp/verify',{
       otp:otp
     })
     if(response.data.success){
@@ -83,13 +83,20 @@ function OtpVerify() {
         theme: "dark",
         });
         console.log(response.data.authToken)
+        console.log(response.data.profile)
         const authToken =response.data.authToken ;
+        const profile=response.data.profile;
 
         // Store the auth token in the localStorage
         localStorage.setItem("authToken", authToken);
-
-        navigate("/SetProfile")
-        // setLoading(false)
+        {
+          if (profile) {
+            navigate("/Application")
+          }else{
+            navigate("/SetProfile")
+          }
+        }
+        
         
     }else{
       toast.error(`Invalid OTP!`, {

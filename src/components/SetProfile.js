@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import "../Styles/SetProfile.css"
 import { ToastContainer, toast } from 'react-toastify';
-import { Avatar,Button } from '@mui/material'
+import { Avatar} from '@mui/material'
 import {storage} from '../firebase'
-import {ref,uploadBytes,getDownloadURL,deleteObject } from 'firebase/storage'
+import {ref,uploadBytes,getDownloadURL} from 'firebase/storage'
 import axios from '../axios'
 import { useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ function SetProfile() {
     // Retrieve the auth token from the localStorage
     const authToken = localStorage.getItem("authToken");
     const navigate= useNavigate();
+
    
     useEffect(() => {
         if(url){

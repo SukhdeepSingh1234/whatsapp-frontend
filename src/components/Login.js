@@ -20,7 +20,7 @@ function Login() {
     e.preventDefault();
     
     try {
-      const response=await axios.post('/signup',{
+      const response=await axios.post('/api/auth/signup',{
         name:name,
         email:email,
         phone:phone
@@ -71,11 +71,9 @@ function Login() {
         theme: "dark",
         });
     }
-    setInterval(() => {
-      setMsg(false)
-    }, 6000);
-
-  
+    // setInterval(() => {
+    //   setMsg(false)
+    // }, 6000);
   }
 
   const handleLogin= (e)=>{

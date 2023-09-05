@@ -1,10 +1,28 @@
 .home_background{
+    background-image: url('https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-cool-dark-green-new-theme-whatsapp.jpg');
     object-fit: contain;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
 }
-.home_background img {
-    width: 100%;
-    height: 100%;
+
+.home_logobox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background: none;
+}
+.home_logo{
+    height: 200px;
+    width: 200px;
+}
+.home_logobox h1{
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+
+
 }

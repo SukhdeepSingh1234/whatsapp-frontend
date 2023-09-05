@@ -10,7 +10,10 @@ function Home() {
     },[])
   return (
     <div className='home_background'>
-      <img src='https://ugtechmag.com/wp-content/uploads/2018/08/whatsapp-promo-696x365.png' />
+      <div className='home_logobox' >
+        <img className='home_logo' src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt=""/>
+        <h1>WhatsApp</h1>
+      </div>
     </div>
   )
 }
