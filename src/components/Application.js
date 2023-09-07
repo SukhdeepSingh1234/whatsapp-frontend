@@ -3,82 +3,92 @@ import { useEffect, useState } from "react";
 import Chat from "./Chat";
 import Pusher from "pusher-js";
 import Sidebar from "./Sidebar";
-import axios from "../axios"; 
-import "../Styles/Application.css"
+import axios from "../axios";
+import "../Styles/Application.css";
 function Application() {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState("");
-  const [status,setStatus]=useState('offline')
+  const [status, setStatus] = useState("offline");
   const [userImg, setUserImg] = useState("");
+  const [bio,setBio]=useState("");
   const authToken = localStorage.getItem("authToken");
-  
+
   useEffect(() => {
     const updateUserActivity = async () => {
-      setStatus("online")
-      const date = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
-      
+      // console.log('Inside updateUserActivity:', status);
+      const date = new Date().toLocaleString("en-US", {
+        timeZone: "Asia/Kolkata",
+      });
+      // console.log('After updateUserActivity:', status);
       // Implement the logic to update user activity here
-      console.log('Status:', status); 
+      console.log("Status:", status);
       try {
-        await axios.post('/status',{
-          isOnline:status,
-          lastSeen:date
-        },{
-          headers: {
-            Authorization: `Bearer ${authToken}`,
-            "Content-Type": "application/json"
-          },
-        })
-        .then((response)=>{
-          console.log(response.data);
-        })
+        await axios
+          .post(
+            "/status",
+            {
+              isOnline: status,
+              lastSeen: date,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${authToken}`,
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response) => {
+            console.log(response.data);
+          });
       } catch (error) {
-        console.error('Error updating user activity:', error);
+        // console.error("Error updating user activity:", error);
       }
     };
-  
-    // Call a function to update user activity (e.g., by making an API request)
-    updateUserActivity();
-    
+
     // Set up an event listener to track user activity
     const activityListener = () => {
       // Call the function to update user activity
+      setStatus('online')
       updateUserActivity();
+      // console.log('After updateUserActivity:', status);
     };
 
     // Attach event listeners for user activity (e.g., mousemove, keydown)
-    document.addEventListener('mousemove', activityListener);
-    document.addEventListener('keydown', activityListener);
+    document.addEventListener("mousemove", activityListener);
+    document.addEventListener("keydown", activityListener);
+
+    // Call a function to update user activity (e.g., by making an API request)
+    updateUserActivity();
 
     // Clean up event listeners when the component unmounts
     return () => {
-      document.removeEventListener('mousemove', activityListener);
-      document.removeEventListener('keydown', activityListener);
+      document.removeEventListener("mousemove", activityListener);
+      document.removeEventListener("keydown", activityListener);
     };
-  }, []);
+  }, [authToken]);
   useEffect(() => {
     axios
       .post(
-        '/getUserData',
+        "/getUserData",
         {},
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
         }
       )
       .then((response) => {
-        const { username, imageUrl } = response.data;
-        setName(username)
-        setUserImg(imageUrl)
-        
+        const { username, imageUrl,bio } = response.data;
+        setName(username);
+        setUserImg(imageUrl);
+        setBio(bio);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error:", error.message);
       });
   }, []);
-
 
   // useEffect(() => {
   //   axios.get("/messages/sync").then((response) => {
@@ -107,13 +117,12 @@ function Application() {
   // console.log(messages);
 
   return (
-    <div className="application" >
-      <div className="application_body" >
-      <Sidebar userImg={userImg} />
-      <Chat messages={messages} name={name} />
+    <div className="application">
+      <div className="application_body">
+        <Sidebar userImg={userImg} bio={bio} name={name} />
+        <Chat messages={messages} name={name} />
+      </div>
     </div>
-    </div>
-    
   );
 }
 

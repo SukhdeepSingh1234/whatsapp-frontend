@@ -8,7 +8,7 @@ import { BrowserRouter} from 'react-router-dom';
 import Application from './components/Application';
 import SetProfile from './components/SetProfile';
 import Home from './components/Home'
-import { useNavigate } from "react-router-dom";
+
 
 function App() {
 

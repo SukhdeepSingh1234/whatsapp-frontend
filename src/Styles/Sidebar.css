@@ -48,4 +48,28 @@
 }
 .sidebar_chats::-webkit-scrollbar {
     display: none;
-  }
+}
+.profile_header{
+    background-color: #008069;
+    height: 13vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: large;
+
+
+}
+.profile_header svg {
+    margin-top: auto;
+    padding: 15px;
+}
+.profile_header_p{
+    margin-top: auto;
+    padding: 15px;
+}
+.profile_content{
+    background-color: #ededed;
+    height: 100vh;
+}
+
