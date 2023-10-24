@@ -1,17 +1,21 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState,useContext } from "react";
+import { AccountContext } from "./Context";
 import Chat from "./Chat";
 import Pusher from "pusher-js";
 import Sidebar from "./Sidebar";
 import axios from "../axios";
 import "../Styles/Application.css";
+import EmptyChat from "./EmptyChat";
 function Application() {
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
   const [name, setName] = useState("");
   const [status, setStatus] = useState("offline");
   const [userImg, setUserImg] = useState("");
   const [bio,setBio]=useState("");
+  const [id, setId] = useState("");
   const authToken = localStorage.getItem("authToken");
+
+  const {person,setLoggedId}=useContext(AccountContext)
 
   useEffect(() => {
     const updateUserActivity = async () => {
@@ -79,16 +83,20 @@ function Application() {
         }
       )
       .then((response) => {
-        const { username, imageUrl,bio } = response.data;
+        const {id, username, imageUrl,bio } = response.data;
+        setId(id)
         setName(username);
         setUserImg(imageUrl);
         setBio(bio);
+        setLoggedId(id)
         console.log(response.data);
+
       })
       .catch((error) => {
         console.error("Error:", error.message);
       });
   }, []);
+  
 
   // useEffect(() => {
   //   axios.get("/messages/sync").then((response) => {
@@ -120,7 +128,9 @@ function Application() {
     <div className="application">
       <div className="application_body">
         <Sidebar userImg={userImg} bio={bio} name={name} />
-        <Chat messages={messages} name={name} />
+
+        {Object.keys(person).length ? <Chat name={name} />:<EmptyChat/>}
+
       </div>
     </div>
   );

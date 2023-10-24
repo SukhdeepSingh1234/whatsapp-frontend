@@ -1,7 +1,7 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    flex: 0.35; /* it is for the flex distance or gap or width of the container which is 35% of the container*/
+    flex: 0.30; /* it is for the flex distance or gap or width of the container which is 35% of the container*/
 }
 .sidebar_header{
     display: flex;

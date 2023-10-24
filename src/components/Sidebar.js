@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import '../Styles/Sidebar.css'
+import axios from '../axios'
 import ChatIcon from '@mui/icons-material/Chat';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
@@ -17,8 +18,8 @@ function Sidebar({userImg,bio,name}) {
   const [openDrawer,setOpenDrawer]=useState(false)
   const [open, setOpen] = useState(false);
   const navigate= useNavigate()
-
-
+  const [users,setUsers]=useState([])
+  const [text,setText] = useState("")
   const handleClose=()=>{
     setOpen(false);
   }
@@ -39,13 +40,27 @@ function Sidebar({userImg,bio,name}) {
       left:72,
       top:42,
       height:'90%',
-      width:'32%',
+      width:'27%',
       boxShadow:'none'
   }
   const handleLogOut=()=>{
     localStorage.removeItem('authToken')
     navigate('/')
   }
+  useEffect(() => {
+    try {
+      axios.get("/users").then((response) => {
+        const users = response.data;
+        const filteredUsers = users.filter(user => user.name.toLowerCase().includes(text.toLowerCase()));
+        setUsers(filteredUsers)
+        console.log(response.data)
+      });
+    } catch (error) {
+      console.log("error getting users api",error.message);
+    }
+      
+    }, [text]);
+
 
   return (
     <div className='sidebar'>
@@ -97,21 +112,16 @@ function Sidebar({userImg,bio,name}) {
       <div className='sidebar_search'>
             <div className='sidebar_searchContainer'>
                 <SearchOutlined/>
-                <input placeholder='Search or start new chat' type='text' />
+                <input placeholder='Search or start new chat' type='text' onChange={(e)=>setText(e.target.value)} />
             </div>
         </div>
         <div className='sidebar_chats' >
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-            <SidebarChat/>
-
+            {
+              users.map(user =>(
+                <SidebarChat user={user} />
+              ))
+            }
+            
         </div>
     </div>
   )

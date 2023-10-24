@@ -1,0 +1,9 @@
+.emptychat{
+    display: flex;
+    flex-direction: column;
+    flex: 0.70;
+}
+.emptychat img{
+    width: 100% !important;
+    height: 100% !important;
+}
