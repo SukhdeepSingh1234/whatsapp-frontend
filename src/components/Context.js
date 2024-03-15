@@ -14,7 +14,8 @@ function Context({children}) {
 
 
     useEffect(()=>{
-        socket.current=io("ws://localhost:8000")
+        // socket.current=io("ws://localhost:8000")
+        socket.current=io("https://whatsapp-socketio.onrender.com")
     },[])
 
     return (
