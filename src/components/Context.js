@@ -5,13 +5,16 @@ export const AccountContext = createContext(null)
 
 function Context({children}) {
 
-    const [person,setPerson]= useState({})
+    const [person,setPerson]= useState({});
     const [loggedId,setLoggedId]= useState("");
-    const [latestmsg,setLatestmsg]= useState("")
-    const socket=useRef()
+    const [latestmsg,setLatestmsg]= useState("");
+    const [allData,setAllData]=useState({})
+    const [activeUsers,setActiveUsers]= useState([])
+    const socket=useRef();
+
 
     useEffect(()=>{
-        socket.current=io("ws://localhost:9000")
+        socket.current=io("ws://localhost:8000")
     },[])
 
     return (
@@ -22,6 +25,10 @@ function Context({children}) {
             setLoggedId,
             latestmsg,
             setLatestmsg,
+            allData,
+            setAllData,
+            activeUsers,
+            setActiveUsers,
             socket
         }}>
             {children}

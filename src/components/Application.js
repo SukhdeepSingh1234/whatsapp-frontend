@@ -15,7 +15,7 @@ function Application() {
   const [id, setId] = useState("");
   const authToken = localStorage.getItem("authToken");
 
-  const {person,setLoggedId}=useContext(AccountContext)
+  const {person,setLoggedId,setAllData,allData}=useContext(AccountContext)
 
   useEffect(() => {
     const updateUserActivity = async () => {
@@ -25,7 +25,7 @@ function Application() {
       });
       // console.log('After updateUserActivity:', status);
       // Implement the logic to update user activity here
-      console.log("Status:", status);
+      // console.log("Status:", status);
       try {
         await axios
           .post(
@@ -42,7 +42,7 @@ function Application() {
             }
           )
           .then((response) => {
-            console.log(response.data);
+            // console.log(response.data);
           });
       } catch (error) {
         // console.error("Error updating user activity:", error);
@@ -89,13 +89,15 @@ function Application() {
         setUserImg(imageUrl);
         setBio(bio);
         setLoggedId(id)
-        console.log(response.data);
+        setAllData(response.data);
+        // console.log(response.data);
 
       })
       .catch((error) => {
         console.error("Error:", error.message);
       });
   }, []);
+  // console.log("All data received",allData)
   
 
   // useEffect(() => {
