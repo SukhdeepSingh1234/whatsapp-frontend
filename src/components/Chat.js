@@ -80,7 +80,7 @@ function Chat({ name }) {
 
   useEffect(() => {
     socket.current.on("getMessage", (data) => {
-      console.log('getMessage called')
+      console.log("getMessage called");
       setIncomingMessage({
         ...data,
         sendAt: Date.now(),
@@ -89,8 +89,9 @@ function Chat({ name }) {
   }, []);
 
   useEffect(() => {
-    incomingMessage && conversation?.members?.includes(incomingMessage.senderId)&&
-      setMessages(prev=> [...prev,incomingMessage])
+    incomingMessage &&
+      conversation?.members?.includes(incomingMessage.senderId) &&
+      setMessages((prev) => [...prev, incomingMessage]);
   }, [incomingMessage, conversation]);
 
   const sendMessage = async (e) => {
@@ -114,16 +115,15 @@ function Chat({ name }) {
       };
     }
     socket.current.emit("sendMessage", message);
-    console.log('message sent')
+    console.log("message sent");
     console.log(message);
     try {
       // Send the message using Axios request
       const response = await axios.post("/messages/new", message);
       console.log("Message sent!", response);
-  
+
       // Emit the message using socket
-      
-  
+
       // Clear the input fields and flags
       setText("");
       setFile("");
@@ -161,7 +161,8 @@ function Chat({ name }) {
   }, [file]);
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ transition: "smooth" });
+    // Scroll to the bottom of the container after messages are updated
+    scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [messages]);
 
   const onFileChange = (e) => {

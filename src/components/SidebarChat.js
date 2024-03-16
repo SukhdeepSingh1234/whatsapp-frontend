@@ -30,7 +30,7 @@ function SidebarChat({user}) {
       <Avatar src={user.image} />
       <div className='sidebarChat_info'>
         <h2>{user.name}</h2>
-        <p>{latestmsg}</p>
+        {/* <p>{latestmsg}</p> */}
       </div>
     </div>
   )
