@@ -115,7 +115,7 @@ function OtpVerify() {
   }
   const SignUp =(e)=>{
     e.preventDefault();
-    navigate("/Login")
+    navigate("/")
   }
 
   return (

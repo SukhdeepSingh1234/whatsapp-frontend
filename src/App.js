@@ -18,7 +18,7 @@ function App() {
       <div className='app_body' >
       <BrowserRouter>
       <Routes>
-        <Route exact path="/Login" element={authToken? <Navigate to="/Application"/> : <Login/>} />
+        <Route exact path="/" element={<Login/>} />
         <Route exact path="/OtpVerify" element={authToken? <Navigate to="/Application"/> : <OtpVerify />} />
         <Route exact path="/SetProfile" element={ authToken? <Navigate to="/Application"/> : <SetProfile />} />
         <Route exact path="/Application" element={<Application />} />
